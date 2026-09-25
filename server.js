@@ -16,9 +16,11 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes Import
 const studentRoutes = require('./routes/studentRoutes');
+const teacherRoutes = require('./routes/teacherRoutes');
 
 // Routes Use
 app.use('/api/students', studentRoutes);
+app.use('/api/teachers', teacherRoutes);
 
 // Basic Test Route
 app.get('/', (req, res) => {
