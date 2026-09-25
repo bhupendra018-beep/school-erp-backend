@@ -14,6 +14,12 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected Successfully!'))
   .catch((err) => console.error('MongoDB Connection Error:', err));
 
+// Routes Import
+const studentRoutes = require('./routes/studentRoutes');
+
+// Routes Use
+app.use('/api/students', studentRoutes);
+
 // Basic Test Route
 app.get('/', (req, res) => {
   res.send('School ERP Backend API is running!');
